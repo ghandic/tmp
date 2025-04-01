@@ -5,7 +5,13 @@
 </head>
 <body>
     <script>
-        window.location.href = `https://malvern-lacrosse-club.square.site${window.location.pathname}${window.location.search}`;
+        function stripPrefix(string, prefix) {
+            if (string.startsWith(prefix)) {
+                return string.slice(prefix.length);
+            }
+            return string;
+        }
+        window.location.href = `https://malvern-lacrosse-club.square.site${stripPrefix(window.location.pathname, "/tmp")}${window.location.search}`;
     </script>
 </body>
 </html>
